@@ -4,10 +4,17 @@ import java.util.Scanner;
 class MaxNum {
     public static void main(String[] args) {
         ArrayList<Integer> numsList = new ArrayList<>();
+
+        InputValue(numsList);
+        int maxNum = checkMaxNum(numsList);
+        System.out.println("The Maximum number is :" + maxNum + ". the position is Index of: " + numsList.indexOf(maxNum));
+
+    }
+    //Input value method
+    public static void InputValue(ArrayList<Integer> numsList){
         int i = 0;
         int number;
         int numOfItems = 0;
-
         while(numOfItems < 10) {
             System.out.println("Please entre the No. " + (i + 1) + " of 10 numbers");
             number = validateNumber();
@@ -19,14 +26,10 @@ class MaxNum {
                 numsList.remove(i);
                 i = numOfItems-1;
             }
-
-      }
-        int maxNum = checkMaxNum(numsList);
-        System.out.println("The Maxmum number is :" + maxNum + ". the position is Index of: " + numsList.indexOf(maxNum));
-
+        }
     }
 
-    //Check Maxmum number and outpit the value
+    //Check Maximum number and output the value
     public static int checkMaxNum(ArrayList<Integer> numsList) {
         int maxNum = 0;
         for (Integer integer : numsList) {
