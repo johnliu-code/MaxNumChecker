@@ -15,8 +15,11 @@ class MaxNum {
         int i = 0;
         int number;
         int numOfItems = 0;
-        while(numOfItems < 10) {
-            System.out.println("Please entre the No. " + (i + 1) + " of 10 numbers");
+
+        System.out.println("How manny numbers you want to input? ");
+        int numToCheck = validateNumber();
+        while(numOfItems < numToCheck) {
+            System.out.println("Please entre the No. " + (i + 1) + " of "+ numToCheck + " numbers");
             number = validateNumber();
             numsList.add(number);
             numOfItems = numsList.size();
@@ -38,7 +41,6 @@ class MaxNum {
         }
         return maxNum;
     }
-
 
    // Validate user input
     public static int validateNumber() {
